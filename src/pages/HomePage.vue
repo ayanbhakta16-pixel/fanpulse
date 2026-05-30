@@ -4,35 +4,25 @@
 
     <p>The public approval tracker for sports.</p>
 
-    <div class="section">
-      <h2>Trending Up ⬆️</h2>
-    </div>
+    <h2>Most Loved ❤️</h2>
 
-    <div class="section">
-      <h2>Trending Down ⬇️</h2>
-    </div>
-
-    <div class="section">
-      <h2>Most Loved ❤️</h2>
-    </div>
-
-    <div class="section">
-      <h2>Most Hated 😡</h2>
-    </div>
-
-    <div class="section">
-      <h2>Most Polarizing ⚡</h2>
-    </div>
+    <PlayerCard
+      v-for="player in players"
+      :key="player.id"
+      :player="player"
+    />
   </div>
 </template>
 
+<script setup lang="ts">
+import PlayerCard from '../components/PlayerCard.vue'
+import { players } from '../mock/players'
+</script>
+
 <style scoped>
 .homepage {
-  padding: 40px;
-  font-family: Arial, sans-serif;
-}
-
-.section {
-  margin-top: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
 }
 </style>
